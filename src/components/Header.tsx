@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="header">
-      <h1 className="title">My App</h1>
+      <h2 className="title">IS542 Final Project</h2>
       <nav>
         <Link to="/" className="nav-link">
           Home

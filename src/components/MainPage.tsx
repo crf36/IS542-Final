@@ -6,7 +6,9 @@ export default function MainPage() {
     <main>
       <div className="page-container">
         <Header />
-        <Navigation />
+        <div className="content">
+          <Navigation />
+        </div>
       </div>
     </main>
   );
