@@ -4,6 +4,8 @@ import { DataProvider } from "./context/DataProvider";
 import { NotFoundPage } from "./components/NotFoundPage";
 import MainPage from "./components/MainPage";
 import HomePage from "./components/HomePage";
+import { ErrorFallback } from "./ErrorFallback";
+import { ErrorBoundary } from "react-error-boundary";
 
 function App() {
   const router = createBrowserRouter(
@@ -22,9 +24,11 @@ function App() {
   );
 
   return (
-    <DataProvider>
-      <RouterProvider router={router} />
-    </DataProvider>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <DataProvider>
+        <RouterProvider router={router} />
+      </DataProvider>
+    </ErrorBoundary>
   );
 }
 

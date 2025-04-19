@@ -14,3 +14,8 @@ export interface MoviesContextType {
   movies: { [id: string]: Movie };
   isLoading: boolean;
 }
+
+export interface FallbackProps {
+  error: Error;
+  resetErrorBoundary: () => void;
+}
