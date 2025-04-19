@@ -1,9 +1,9 @@
 import { useOutlet } from "react-router-dom";
 import LoadingIndicator from "./LoadingIndicator";
-import { useDataContext } from "../context/DataContextHook";
+import { useTasksDataContext } from "../context/TaskDataContextHook";
 
 export function Navigation() {
-  const { isLoading } = useDataContext();
+  const { isLoading } = useTasksDataContext();
 
   const currentOutlet = useOutlet();
 

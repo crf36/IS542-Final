@@ -1,14 +1,62 @@
-.home-container {
+/*Conversation with AI about styling:
+  https://chatgpt.com/c/68042e0c-61b8-8004-a236-fe48f2cfc19c */
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
   padding: 2rem;
-  text-align: center;
+  padding-top: var(--header-height);
 }
 
-.home-container h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.home-container {
+  padding: 1.5rem;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.home-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #222;
 }
 
 .home-container p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #555;
+  margin: 0.4rem 0;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
 }

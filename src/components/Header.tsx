@@ -9,6 +9,9 @@ const Header = () => {
         <Link to="/" className="nav-link">
           Home
         </Link>
+        <Link to="/new" className="nav-link">
+          Create a New Task
+        </Link>
       </nav>
     </header>
   );

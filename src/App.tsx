@@ -1,11 +1,12 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { DataProvider } from "./context/DataProvider";
+import { TaskDataProvider } from "./context/TaskDataProvider";
 import { NotFoundPage } from "./components/NotFoundPage";
 import MainPage from "./components/MainPage";
-import HomePage from "./components/HomePage";
 import { ErrorFallback } from "./ErrorFallback";
 import { ErrorBoundary } from "react-error-boundary";
+import { TaskForm } from "./components/TaskForm";
+import HomePage from "./components/HomePage";
 
 function App() {
   const router = createBrowserRouter(
@@ -16,7 +17,8 @@ function App() {
         errorElement: <NotFoundPage />,
         children: [
           { path: "", element: <HomePage /> },
-          // { path: ":id", element: <DetailsPage /> },
+          { path: "/new", element: <TaskForm /> },
+          { path: "/:taskid/edit", element: <TaskForm /> },
         ],
       },
     ],
@@ -25,9 +27,9 @@ function App() {
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <DataProvider>
+      <TaskDataProvider>
         <RouterProvider router={router} />
-      </DataProvider>
+      </TaskDataProvider>
     </ErrorBoundary>
   );
 }
